@@ -1,0 +1,13 @@
+diff --git a/bin/webpack.js b/bin/webpack.js
+index fead38bf4b17b8a9d83c61481d28804f8f0df60f..c7c1691518ce1ab3fb6be25b7003d85e9be85b4a 100755
+--- a/bin/webpack.js
++++ b/bin/webpack.js
+@@ -83,7 +83,7 @@ const cli = {
+ 	name: "webpack-cli",
+ 	package: "webpack-cli",
+ 	binName: "webpack-cli",
+-	installed: isInstalled("webpack-cli"),
++	installed: true,
+ 	url: "https://github.com/webpack/webpack-cli"
+ };
+ 

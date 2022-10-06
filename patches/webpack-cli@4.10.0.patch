@@ -1,0 +1,26 @@
+diff --git a/lib/webpack-cli.js b/lib/webpack-cli.js
+index 9e99f5ae69e907e916b73019229ea0f9667f8e16..2f3c9d0766af1cb938ac2f2baf99da9ca63c9e31 100644
+--- a/lib/webpack-cli.js
++++ b/lib/webpack-cli.js
+@@ -59,6 +59,12 @@ class WebpackCLI {
+         };
+     }
+     checkPackageExists(packageName) {
++        try {
++            require.resolve(packageName);
++            return true;
++        } catch (e) {
++            return false;
++        }
+         if (process.versions.pnp) {
+             return true;
+         }
+@@ -141,6 +147,8 @@ class WebpackCLI {
+         }
+     }
+     async doInstall(packageName, options = {}) {
++        console.error(`Required package "${packageName}" is missing.`);console.trace();
++        process.exit(2);
+         const packageManager = this.getDefaultPackageManager();
+         if (!packageManager) {
+             this.logger.error("Can't find package manager");

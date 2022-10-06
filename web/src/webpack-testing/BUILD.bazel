@@ -1,0 +1,14 @@
+load("@npm//web:webpack/package_json.bzl", webpack_bin = "bin")
+
+webpack_bin.webpack(
+    name = "baz-min",
+    args = [
+        "build"
+    ],
+    srcs = [
+        "baz.js",
+    ],
+    outs = [
+        "baz-min.js",
+    ],
+)
