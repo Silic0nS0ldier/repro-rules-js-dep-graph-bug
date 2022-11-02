@@ -11,4 +11,5 @@ webpack_bin.webpack(
     outs = [
         "baz-min.js",
     ],
+    chdir = package_name(),
 )
