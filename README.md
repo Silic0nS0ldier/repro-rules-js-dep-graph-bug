@@ -8,4 +8,5 @@ To repro run
 
 ```
 bazel build //web/src/webpack-testing:baz-min
+bazel build //web/src/webpack-testing:baz-min --experimental_allow_unresolved_symlinks
 ```
